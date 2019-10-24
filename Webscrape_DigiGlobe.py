@@ -1,7 +1,3 @@
-"""
-webscraping from DigiGlobe
-
-"""
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -14,8 +10,6 @@ import time
 #   UPDATE THE LINK TO YOUR DRIVER HERE    #
 ############################################
 driver = webdriver.Chrome('C:/Users/zwi/Downloads/chromedriver.exe')
-
-
 
 # browse to page
 driver.get('https://discover.digitalglobe.com/')
@@ -77,27 +71,5 @@ views = driver.find_elements_by_link_text('view')
 for item in views:
     item.click()
     
-    
 # switch to image tab
 driver.switch_to.active_element
-#driver.switch_to.window(handles[0])
-#driver.find_element_by_tag_name('body').send_keys(Keys.CONTROL + Keys.TAB)
-
-# download sat image
-#img = driver.find_element_by_xpath('//img[1]')
-#img = driver.find_element_by_css_selector('img')
-#img = driver.find_elements_by_xpath("//a//img")
-#img = driver.find_elements_by_tag_name('img')
-#img = driver.find_element_by_tag_name('body')
-
-#src = img[0].get_attribute('src')
-#urllib.urlretrieve(src,'img1.jpeg')
-
-
-
-#time.sleep(5)
-#WebDriverWait(driver,60).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'input.typeahead_input')))
-#driver.find_element_by_css_selector('input.typeahead_input').send_keys('Uttarakhand')
-#WebDriverWait(driver,60).until(EC.presence_of_element_located((By.XPATH, '//*[@id="SUBMIT_HOTELS"]')))
-#driver.find_elements(By.XPATH, '//*[@id="SUBMIT_HOTELS"]')[0].click()
-#time.sleep(5)
